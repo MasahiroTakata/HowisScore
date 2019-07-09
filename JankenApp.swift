@@ -11,9 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var enemyJanken: UIImageView!
-    @IBOutlet weak var gu: UIImageView!
-    @IBOutlet weak var choki: UIImageView!
-    @IBOutlet weak var pa: UIImageView!
+    @IBAction func gu(_ sender: Any) {
+    }
+    @IBAction func choki(_ sender: Any) {
+    }
+    @IBAction func pa(_ sender: Any) {
+    }
     // 一定の間隔で処理を行う為のタイマー
     var timer: Timer?
     // 画像の番号
