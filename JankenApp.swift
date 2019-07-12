@@ -9,14 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var enemyJanken: UIImageView!
-    @IBAction func gu(_ sender: Any) {
-    }
-    @IBAction func choki(_ sender: Any) {
-    }
-    @IBAction func pa(_ sender: Any) {
-    }
     // 一定の間隔で処理を行う為のタイマー
     var timer: Timer?
     // 画像の番号
@@ -27,15 +19,27 @@ class ViewController: UIViewController {
         "choki",
         "pa",
     ]
+    @IBOutlet weak var enemyJanken: UIImageView!
+    @IBAction func gu(_ sender: Any) {
+        print("グー")
+        //相手側のジャンケンをランダムで表示させる
+        var randomImg = arc4random_uniform(3)
+        //enemyJanken.image = UIImage(named: imageNameArray[randomImg])
+        self.view.addSubview(enemyJanken)
+    }
+    @IBAction func choki(_ sender: Any) {
+        print("チョキ")
+        //相手側のジャンケンをランダムで表示させる
+    }
+    @IBAction func pa(_ sender: Any) {
+        print("パー")
+        //相手側のジャンケンをランダムで表示させる
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 相手側のグーチョキパーを0.1秒おきに表示させる
+        // 相手側のグーチョキパーを0.1秒おきに切替表示させる
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.onTimer(timer:)), userInfo: nil, repeats: true)
-        // 自分のグーチョキパーを表示
-//        gu.image = UIImage(named: "gu")
-//        choki.image = UIImage(named: "choki")
-//        pa.image = UIImage(named: "pa")
     }
 
     // 自分のグーチョキパーのどれかがタップした時に、呼び出すメソッド
