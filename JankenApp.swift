@@ -21,19 +21,29 @@ class ViewController: UIViewController {
     ]
     @IBOutlet weak var enemyJanken: UIImageView!
     @IBAction func gu(_ sender: Any) {
-        print("グー")
+        // タイマーメソッド呼び出しを止める
+        timer!.invalidate()
         //相手側のジャンケンをランダムで表示させる
-        var randomImg = arc4random_uniform(3)
-        //enemyJanken.image = UIImage(named: imageNameArray[randomImg])
+        let randomImg = Int(arc4random_uniform(3))
+        enemyJanken.image = UIImage(named: imageNameArray[randomImg])
         self.view.addSubview(enemyJanken)
     }
     @IBAction func choki(_ sender: Any) {
-        print("チョキ")
+        // タイマーメソッド呼び出しを止める
+        timer!.invalidate()
         //相手側のジャンケンをランダムで表示させる
+        let randomImg = Int(arc4random_uniform(3))
+        enemyJanken.image = UIImage(named: imageNameArray[randomImg])
+        self.view.addSubview(enemyJanken)
     }
+
     @IBAction func pa(_ sender: Any) {
-        print("パー")
+        // タイマーメソッド呼び出しを止める
+        timer!.invalidate()
         //相手側のジャンケンをランダムで表示させる
+        let randomImg = Int(arc4random_uniform(3))
+        enemyJanken.image = UIImage(named: imageNameArray[randomImg])
+        self.view.addSubview(enemyJanken)
     }
     
     override func viewDidLoad() {
