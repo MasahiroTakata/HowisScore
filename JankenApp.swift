@@ -21,9 +21,7 @@ class ViewController: UIViewController {
     ]
     @IBOutlet weak var enemyJanken: UIImageView!
     @IBAction func gu(_ sender: Any) {
-        // タイマーメソッド呼び出しを止める
         timer!.invalidate()
-        //相手側のジャンケンをランダムで表示させる
         let randomImg = Int(arc4random_uniform(3))
         enemyJanken.image = UIImage(named: imageNameArray[randomImg])
         self.view.addSubview(enemyJanken)
@@ -51,8 +49,6 @@ class ViewController: UIViewController {
         // 相手側のグーチョキパーを0.1秒おきに切替表示させる
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.onTimer(timer:)), userInfo: nil, repeats: true)
     }
-
-    // 自分のグーチョキパーのどれかがタップした時に、呼び出すメソッド
     
     // Timerクラスで呼び出されるメソッド
     @objc func onTimer(timer: Timer){
